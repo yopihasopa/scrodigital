@@ -21,7 +21,9 @@ body {
   color: #222222;
   /* min-height: 5000px; */
 }
-
+i.lni {
+  font-size: 1.5rem;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -263,13 +265,13 @@ footer .credit a {
 /* Desktop */
 @media (max-width: 1366px) {
   html {
-    font-size: 75%;
+    font-size: 97%;
   }
 }
 /* Tablet */
 @media (max-width: 768px) {
   html {
-    font-size: 62.5%;
+    font-size: 95%;
   }
   #hamburger-menu {
     display: inline-block;
@@ -327,6 +329,6 @@ footer .credit a {
 /* Mobile */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 90%;
   }
 }

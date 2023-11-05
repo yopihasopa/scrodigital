@@ -84,7 +84,7 @@ i.lni {
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-bottom: -4rem;
+  margin-bottom: -8rem;
 }
 .hero::after {
   content: "";
@@ -128,7 +128,8 @@ i.lni {
 .about,
 .service,
 .contact {
-  padding: 4rem 7% 1.4rem;
+  padding: 8rem 7% 0;
+  margin-bottom: -3rem;
 }
 .about h2,
 .service h2,
@@ -151,7 +152,7 @@ i.lni {
 .service .row {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5rem;
+  margin-top: 1.5rem;
   justify-content: center;
 }
 .service .row .service-card {
@@ -235,7 +236,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 3rem 0;
-  margin-top: 3rem;
+  margin-top: 8rem;
 }
 footer .socials,
 footer .links,

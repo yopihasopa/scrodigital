@@ -10,6 +10,7 @@
   outline: none;
   border: none;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -18,7 +19,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
-  color: #222222;
+  color: #222;
   /* min-height: 5000px; */
 }
 i.lni {
@@ -29,7 +30,7 @@ i.lni {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background-color: #191919;
+  background-color: #111;
   /* border-bottom: 1px solid #222222; */
   position: fixed;
   top: 0;
@@ -133,14 +134,16 @@ i.lni {
 .about h2,
 .service h2,
 .contact h2 {
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
+  max-width: 60rem;
+  margin: 0 auto;
   margin-bottom: 1rem;
 }
 .about p,
 .service p,
 .contact p {
-  text-align: center;
+  text-align: left;
   max-width: 60rem;
   margin: 0 auto;
   font-size: 1rem;
@@ -154,15 +157,34 @@ i.lni {
 }
 .service .row .service-card {
   text-align: center;
-  padding-bottom: 4rem;
+  padding: 3rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  margin: 1.5rem;
+  flex: 0 1 20rem;
 }
-.service .row .service-card img {
-  border-radius: 50%;
-  width: 80%;
-}
+
 .service .row .service-card .service-card-title {
-  margin: 1.5rem auto 0.5rem;
+  margin: 0.5rem auto 0.5rem;
   font-size: 1.5rem;
+  text-align: left;
+}
+.service .row .service-card .service-card-price {
+  font-size: 1rem;
+}
+.service .row .service-card ul {
+  text-align: left;
+  margin-left: 1.2rem;
+  margin-top: 2rem;
+}
+.service .row .service-card button {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 /* contact Section */
 .contact .row {
@@ -198,7 +220,7 @@ i.lni {
   color: #ccc;
   border-radius: 0.5rem;
 }
-.contact .row form .btn {
+.contact .row button {
   margin-top: 3rem;
   display: inline-block;
   padding: 1rem 2rem;
@@ -210,7 +232,8 @@ i.lni {
 }
 /* Footer Section */
 footer {
-  background-color: #191919;
+  background-color: #070606;
+  color: #fff;
   text-align: center;
   padding: 3rem 0;
   margin-top: 3rem;
@@ -225,7 +248,7 @@ footer .links a {
   color: #fff;
   margin: 0 1rem;
 }
-footer .credit {
+footer .credit p {
   color: #fff;
   font-size: 0.8rem;
 }
@@ -249,8 +272,8 @@ footer .credit {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #222;
-    width: 30rem;
+    background-color: #111;
+    width: 20rem;
     height: 100vh;
     transition: 0.3s;
   }
@@ -262,7 +285,7 @@ footer .credit {
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   .navbar .navbar-nav a::after {
     transform-origin: 0 0;
@@ -284,6 +307,9 @@ footer .credit {
   .about .row .content h3 {
     margin-top: 1rem;
     font-size: 2rem;
+  }
+  .service .row .service-card {
+    margin: 0.8rem;
   }
   .contact .row {
     flex-wrap: wrap;

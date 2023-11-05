@@ -64,6 +64,9 @@ i.lni {
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(1);
 }
+.navbar .navbar-extra {
+  display: none;
+}
 .navbar .navbar-extra a {
   color: #ffffff;
   margin: 0 0.5rem;
@@ -162,8 +165,18 @@ i.lni {
   border-radius: 1rem;
   margin: 1.5rem;
   flex: 0 1 20rem;
+  position: relative;
 }
-
+.service .row .service-card .service-badge {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background-color: #00f2ea;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #111;
+}
 .service .row .service-card .service-card-title {
   margin: 0.5rem auto 0.5rem;
   font-size: 1.5rem;
@@ -265,7 +278,8 @@ footer .credit p {
   html {
     font-size: 95%;
   }
-  #hamburger-menu {
+  #hamburger-menu,
+  .navbar .navbar-extra {
     display: inline-block;
   }
   .navbar .navbar-nav {

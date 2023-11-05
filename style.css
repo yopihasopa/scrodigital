@@ -159,11 +159,13 @@ i.lni {
   justify-content: center;
 }
 .service .row .service-card {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   padding: 3rem 2rem;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  margin: 1.5rem;
+  margin: 3rem 2rem;
   flex: 0 1 20rem;
   position: relative;
 }
@@ -184,20 +186,24 @@ i.lni {
 }
 .service .row .service-card .service-card-price {
   font-size: 1rem;
+  text-align: left;
 }
 .service .row .service-card ul {
   text-align: left;
-  margin-left: 1.2rem;
-  margin-top: 2rem;
+  padding: 1.5rem;
+  position: relative;
 }
-.service .row .service-card button {
+.service .row .service-card a button.service-btn {
   background-color: var(--primary);
   padding: 1rem 2rem;
-  margin-top: 2rem;
+
   color: #fff;
   border-radius: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+  position: absolute;
+  bottom: -1.7rem;
+  right: 5rem;
 }
 /* contact Section */
 .contact .row {
@@ -323,7 +329,7 @@ footer .credit p {
     font-size: 2rem;
   }
   .service .row .service-card {
-    margin: 0.8rem;
+    margin: 2rem 1.5rem;
   }
   .contact .row {
     flex-wrap: wrap;

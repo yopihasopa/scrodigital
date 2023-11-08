@@ -176,8 +176,7 @@ i.lni {
   background-color: #00f2ea;
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
-
-  color: #ffffff;
+  color: #222;
 }
 .service .row .service-card .service-card-title {
   margin: 0.5rem auto 0.5rem;

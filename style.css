@@ -130,13 +130,15 @@ i.lni {
 /* About Section */
 .about,
 .service,
-.contact {
+.contact,
+.client {
   padding: 8rem 7% 0;
   margin-bottom: -3rem;
 }
 .about h2,
 .service h2,
-.contact h2 {
+.contact h2,
+.client h2 {
   text-align: left;
   font-size: 2rem;
   max-width: 60rem;
@@ -204,7 +206,21 @@ i.lni {
   bottom: -1.7rem;
   right: 3.6rem;
 }
-/* contact Section */
+/* Client Section */
+.client h2 {
+  text-align: center;
+}
+.client .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+.client .row .client-card img {
+  padding: 1rem;
+  border-radius: 30px;
+}
+/* Contact Section */
 .contact .row {
   display: flex;
   margin-top: 2rem;

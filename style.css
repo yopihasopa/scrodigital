@@ -157,17 +157,17 @@ i.lni {
 .service .row {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   justify-content: center;
 }
 .service .row .service-card {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem 1rem;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  margin: 3rem 2rem;
+  margin: 1rem;
   flex: 0 1 20rem;
   position: relative;
 }
@@ -345,7 +345,6 @@ footer .credit p {
     font-size: 2rem;
   }
   .service .row .service-card {
-    margin: 2rem 1.5rem;
   }
   .contact .row {
     flex-wrap: wrap;

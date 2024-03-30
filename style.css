@@ -298,7 +298,7 @@ footer .credit p {
 /* Tablet */
 @media (max-width: 768px) {
   html {
-    font-size: 95%;
+    font-size: 90%;
   }
   #hamburger-menu,
   .navbar .navbar-extra {
@@ -360,6 +360,10 @@ footer .credit p {
 /* Mobile */
 @media (max-width: 450px) {
   html {
-    font-size: 90%;
+    font-size: 80%;
+  }
+  .client .row .client-card img {
+    max-width: 100px;
+    border-radius: 25px;
   }
 }

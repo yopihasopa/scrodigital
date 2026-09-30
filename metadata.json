@@ -1,0 +1,8 @@
+{
+  "name": "SCRÖDIGITAL",
+  "description": "Kami menghadirkan solusi digital marketing yang menyeluruh untuk memaksimalkan kehadiran bisnis online Anda.",
+  "requestFramePermissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

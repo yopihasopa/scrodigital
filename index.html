@@ -246,60 +246,50 @@
       </div>
 
       <div class="contact-grid">
-        <div class="contact-card">
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/6283821999444?text=Halo%20SCR%C3%96DIGITAL%2C%20saya%20ingin%20konsultasi%20layanan"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-card"
+        >
           <div class="contact-card-icon">
             <i class="lni lni-whatsapp"></i>
           </div>
           <h4>WhatsApp</h4>
-          <p>Respon cepat untuk diskusi & tanya jawab</p>
-          <a
-            href="https://wa.me/6283821999444?text=Halo%20SCR%C3%96DIGITAL%2C%20saya%20ingin%20konsultasi%20layanan"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-link"
-          >
+          <p>Respon cepat untuk tanya jawab & konsultasi</p>
+          <span class="contact-link">
             +62 838-2199-9444 <i class="lni lni-arrow-right"></i>
-          </a>
-        </div>
+          </span>
+        </a>
 
-        <div class="contact-card">
+        <!-- Email -->
+        <a href="mailto:scrodigital@gmail.com" class="contact-card">
           <div class="contact-card-icon">
             <i class="lni lni-envelope"></i>
           </div>
-          <h4>Email Resmi</h4>
+          <h4>Email</h4>
           <p>Kirimkan brief proyek atau penawaran kerjasama</p>
-          <a href="mailto:scrodigital@gmail.com" class="contact-link">
+          <span class="contact-link">
             scrodigital@gmail.com <i class="lni lni-arrow-right"></i>
-          </a>
-        </div>
+          </span>
+        </a>
 
-        <div class="contact-card">
+        <!-- Lokasi -->
+        <a
+          href="https://maps.google.com/?q=Puri+Indah+Cihampelas+Bandung+Barat"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-card"
+        >
           <div class="contact-card-icon">
             <i class="lni lni-map-marker"></i>
           </div>
           <h4>Lokasi Kantor</h4>
           <p>Puri Indah Cihampelas Blok E12A No. 02</p>
-          <span class="contact-subtext">Kab. Bandung Barat, Jawa Barat</span>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-card-icon">
-            <i class="lni lni-timer"></i>
-          </div>
-          <h4>Jam Operasional</h4>
-          <p>Senin - Sabtu: 09:00 - 18:00 WIB</p>
-          <span class="contact-subtext">Minggu & Tanggal Merah: Tutup</span>
-        </div>
-      </div>
-
-      <div class="contact-cta-wrapper">
-        <a
-          href="https://wa.me/6283821999444?text=Halo%20SCR%C3%96DIGITAL%2C%20saya%20ingin%20konsultasi%20strategi%20digital%20marketing%20bisnis%20saya"
-          class="wa-direct-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="lni lni-whatsapp"></i> Chat Langsung via WhatsApp Sekarang
+          <span class="contact-link">
+            Kab. Bandung Barat <i class="lni lni-arrow-right"></i>
+          </span>
         </a>
       </div>
     </section>
@@ -404,6 +394,30 @@
       const yearSpan = document.getElementById("current-year");
       if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // Fade-in entrance animation for About and Service cards
+      const animatedCards = document.querySelectorAll(".about-card, .service-card");
+      if ("IntersectionObserver" in window) {
+        const cardObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -30px 0px"
+          }
+        );
+
+        animatedCards.forEach((card) => cardObserver.observe(card));
+      } else {
+        // Fallback if IntersectionObserver is not supported
+        animatedCards.forEach((card) => card.classList.add("is-visible"));
       }
     </script>
   </body>

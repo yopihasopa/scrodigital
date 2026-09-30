@@ -141,9 +141,10 @@ i.lni {
 
 .hero .content .hero-badge {
   display: inline-block;
-  background-color: rgba(254, 42, 83, 0.15);
-  border: 1px solid var(--brand);
-  color: #ff9fb2;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  backdrop-filter: blur(6px);
   font-size: 0.85rem;
   padding: 0.4rem 1.1rem;
   border-radius: 50px;
@@ -261,14 +262,35 @@ i.lni {
   background-color: var(--bg);
   border-radius: 0.8rem;
   border: 1px solid var(--border-color);
-  transition: all 0.25s ease;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              background-color 0.25s ease;
+  will-change: opacity, transform;
 }
 
-.about-card:hover {
+.about-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-card.is-visible:hover {
   transform: translateY(-4px);
   border-color: var(--border-hover);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   background-color: #ffffff;
+  transition-delay: 0s;
+}
+
+/* Staggered entrance delays for about cards */
+.about-features .about-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.about-features .about-card:nth-child(3) {
+  transition-delay: 0.2s;
 }
 
 .about-card .about-icon {
@@ -327,14 +349,37 @@ i.lni {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  will-change: opacity, transform;
 }
 
-.service-card:hover {
+.service-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card.is-visible:hover {
   transform: translateY(-6px);
   border-color: var(--border-hover);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition-delay: 0s;
+}
+
+/* Staggered entrance delays for service cards */
+.service .row .service-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.service .row .service-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.service .row .service-card:nth-child(4) {
+  transition-delay: 0.3s;
 }
 
 .service-card.highlight {
@@ -436,31 +481,34 @@ i.lni {
 
 /* Contact Section */
 .contact {
-  background-color: #ffffff;
+  background-color: var(--bg);
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
   max-width: 68rem;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
 }
 
 .contact-card {
-  background-color: var(--bg);
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 1rem;
-  padding: 2.2rem 1.5rem;
+  padding: 2.2rem 1.6rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  color: inherit;
+  text-decoration: none;
 }
 
 .contact-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: var(--border-hover);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   background-color: #ffffff;
@@ -488,66 +536,34 @@ i.lni {
 }
 
 .contact-card h4 {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-dark);
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .contact-card p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
   line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
 }
 
 .contact-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--brand);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   transition: all 0.2s ease;
+  margin-top: auto;
 }
 
-.contact-link:hover {
-  color: var(--brand);
-  gap: 0.6rem;
-}
-
-.contact-subtext {
-  font-size: 0.85rem;
-  color: #6b7280;
-  display: block;
-}
-
-.contact-cta-wrapper {
-  max-width: 32rem;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.wa-direct-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  width: 100%;
-  padding: 1.05rem 2rem;
-  background-color: var(--whatsapp);
-  color: #ffffff;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1.05rem;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
-}
-
-.wa-direct-btn:hover {
-  background-color: var(--whatsapp-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+.contact-card:hover .contact-link {
+  color: var(--brand-hover);
+  gap: 0.65rem;
 }
 
 /* Clients Section */
@@ -711,6 +727,13 @@ footer .credit p {
 }
 
 /* Media Queries */
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+  }
+}
+
 /* Tablet & Mobile Nav */
 @media (max-width: 768px) {
   .navbar-extra {
@@ -786,5 +809,14 @@ footer .credit p {
 
   .service-card {
     padding: 2rem 1.25rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-card,
+  .service-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
